@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------------------
 #   Desc.:      The primary controller of website logic for 'finance'
 #   Purpose:    Pset7 distribution code
-#   Author:     CS50 / Joek Tannas
+#   Author:     CS50 / Joel Tannas
 #   Date:       ? / Feb 2017
 #   
 #   Licensing Info:
