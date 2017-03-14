@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<!- help from http://v4-alpha.getbootstrap.com/content/tables/ ->
+<!- more help from http://stackoverflow.com/a/25375815 ->
+
+    <table class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Value</th>
+                <th>Chart</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocklist %}
+            <tr>
+                <td>{{stocks[stock].symbol}}</td>
+                <td>{{stocks[stock].name}}</td>
+                <td class="numerical">{{stocks[stock].amount}}</td>
+                <td class="numerical">{{stocks[stock].price}}</td>
+                <td class="numerical">{{stocks[stock].value}}</td>
+                <td><a href="https://www.google.ca/finance?q={{stocks[stock].symbol}}">Link</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"> SUM: </td>
+                <td class="numerical">{{total}}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}

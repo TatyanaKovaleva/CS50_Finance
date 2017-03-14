@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Confirmation
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('confirmation') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <p>You have {{action}} {{amount}} share of {{quote.symbol}} stock at {{"${:,.2f}".format(quote.price)}} per share</p>
+                <a class="btn btn-default" href="{{ url_for('index') }}">Return to Index</a>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

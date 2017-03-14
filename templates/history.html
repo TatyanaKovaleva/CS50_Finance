@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<!- help from http://v4-alpha.getbootstrap.com/content/tables/ ->
+<!- more help from http://stackoverflow.com/a/25375815 ->
+
+    <table class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th>Transaction ID#</th>
+                <th>Symbol</th>
+                <th>Amount</th>
+                <th>Time Stamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td class="numerical">{{row["id"]}}</td>
+                <td>{{row["symbol"]}}</td>
+                <td class="numerical">{{'{0:+.2f}'.format(row["amount"])}}</td>
+                <td>{{row["timestamp"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
